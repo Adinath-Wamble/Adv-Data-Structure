@@ -1,0 +1,63 @@
+class ReverseLinkedList{
+	Node head;
+	static class Node{
+		int data;
+		Node next;
+		Node(){
+			data = 0;
+			next = null;
+		}
+		Node(int d){
+			data = d;
+			next = null;
+		}
+	}
+		public Node reverseTheLinkedlist(Node h){
+			Node n,nn = null;
+			Node temp = h;
+			
+			while(n != null){
+				nn= temp.next;
+				temp.next = n;
+				temp = nn;
+			}
+			h = n;
+			return h;
+		}
+		public void display(){
+         Node n = head;
+		 while(n!= null){
+        System.out.print(n.data+ " " );
+        n = n.next;
+        }
+		}		
+	}
+
+
+class Solution{
+	public static void main(String [] args){
+		ReverseLinkedList gg = new ReverseLinkedList();
+		gg.head = new Node(1);
+		Node snd = new Node(5);
+		Node trd = new Node(1);
+		Node frth = new Node(2);
+		Node ftf = new Node(3);
+		Node six = new Node(3);
+		gg.head.next = snd;
+		snd.next = trd;
+		trd.next = frth;
+		frth.next = ftf;
+		ftf.next = six;
+		gg.display();
+		
+		
+	}
+}
+/*
+1
+5
+1
+2
+3
+4
+5*/
